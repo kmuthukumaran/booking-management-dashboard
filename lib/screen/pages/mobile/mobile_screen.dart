@@ -1,5 +1,4 @@
 import 'package:booking_management_dashboard/repository/fake_repository.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -17,7 +16,7 @@ class MobileScreen extends StatelessWidget {
           key: scaffoldKey,
           drawer: DrawerMobile(),
           appBar: AppBar(
-            leading: GestureDetector(onTap: (){scaffoldKey.currentState.openDrawer();},child: Icon(Icons.menu)),
+            leading: GestureDetector(onTap: (){scaffoldKey.currentState!.openDrawer();},child: Icon(Icons.menu)),
             title: Text("Dashboard"),
             actions: [
               Icon(Icons.more_vert),
@@ -188,8 +187,7 @@ class MobileScreen extends StatelessWidget {
                 child: _singleItemQuickStats(
                   title: "Total Bookings",
                   value: "28,345",
-                  width: sizingInformation.screenSize.width / 2.6,
-                  icon: null,
+                  width: sizingInformation.screenSize.width / 2.6, icon: Icons.signal_cellular_null, iconColor: Colors.black,
                 ),
               ),
               Padding(
@@ -197,9 +195,9 @@ class MobileScreen extends StatelessWidget {
                 child: _singleItemQuickStats(
                     title: "Pending Approval",
                     value: "180",
-                    icon: null,
+                    icon: Icons.abc_outlined,
                     width: sizingInformation.screenSize.width / 2.6,
-                    textColor: Colors.red),
+                    textColor: Colors.red, iconColor: Colors.black),
               ),
             ],
           ),
@@ -235,12 +233,12 @@ class MobileScreen extends StatelessWidget {
   }
 
   Widget _singleItemQuickStats(
-      {String title,
+      {required String title,
         Color textColor = Colors.black,
-        String value,
-        IconData icon,
-        double width,
-        Color iconColor}) {
+        required String value,
+        required IconData icon,
+        required double width,
+        required Color iconColor}) {
     return Container(
       width: width,
       height: 110,

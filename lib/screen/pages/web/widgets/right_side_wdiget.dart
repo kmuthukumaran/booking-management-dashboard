@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class RightSideWidget extends StatelessWidget {
   @override
@@ -232,24 +230,24 @@ class RightSideWidget extends StatelessWidget {
             title: "Booking Reminder",
             description: "Lorem Ipsum is simply dummy text",
             icon: Icons.announcement_outlined,
-            iconColor: Colors.red[600],
-            boxColor: Colors.red[100]
+            iconColor: Color.fromRGBO(229, 57, 53, 1),
+            boxColor: Color.fromARGB(255, 255, 205, 210)
           ),
           SizedBox(height: 15),
           _singleRowButton(
               title: "New Message",
               description: "Lorem Ipsum is simply dummy text",
               icon: Icons.announcement_outlined,
-              iconColor: Colors.yellow[600],
-              boxColor: Colors.yellow[100]
+              iconColor: Color.fromARGB(255, 253, 216, 53),
+              boxColor: Color.fromARGB(255, 255, 249, 196)
           ),
           SizedBox(height: 15,),
           _singleRowButton(
               title: "Upcoming Booking",
               description: "Lorem Ipsum is simply dummy text",
               icon: Icons.announcement_outlined,
-              iconColor: Colors.red[600],
-              boxColor: Colors.red[100]
+              iconColor: Color.fromARGB(255, 229, 57, 53),
+              boxColor: Color.fromARGB(255, 255, 205, 210)
           ),
         ],
       ),
@@ -257,11 +255,11 @@ class RightSideWidget extends StatelessWidget {
   }
 
   _singleRowButton(
-      {Color boxColor,
-      Color iconColor,
-      IconData icon,
-      String title,
-      String description}) {
+      {required Color boxColor,
+      required Color iconColor,
+      required IconData icon,
+      required String title,
+      required String description}) {
     return Row(
       children: [
         Container(

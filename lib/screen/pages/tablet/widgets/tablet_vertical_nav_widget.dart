@@ -44,7 +44,7 @@ class _TabletVerticalNavWidgetState extends State<TabletVerticalNavWidget> {
     );
   }
 
-  Widget _colSingleButton({IconData icon, Color borderColor,Color iconColor}) {
+  Widget _colSingleButton({required IconData icon, required Color borderColor,required Color iconColor}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35),
       child: Container(

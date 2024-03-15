@@ -1,12 +1,11 @@
 import 'package:booking_management_dashboard/repository/fake_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class BodyContentTabletWidget extends StatefulWidget {
   final SizingInformation sizingInformation;
 
-  const BodyContentTabletWidget({Key key, this.sizingInformation}) : super(key: key);
+  const BodyContentTabletWidget({Key? key, required this.sizingInformation}) : super(key: key);
 
   @override
   _BodyContentTabletWidgetState createState() => _BodyContentTabletWidgetState();
@@ -110,12 +109,12 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
               title: "Total Bookings",
               value: "28,345",
               width: widget.sizingInformation.screenSize.width / 2.4,
-              icon: null,
+              icon: Icons.abc_outlined,
             ),
             _singleItemQuickStats(
                 title: "Pending Approval",
                 value: "180",
-                icon: null,
+                icon: Icons.signal_cellular_null,
                 width: widget.sizingInformation.screenSize.width / 2.4,
                 textColor: Colors.red),
           ],
@@ -145,12 +144,12 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
   }
 
   Widget _singleItemQuickStats(
-      {String title,
+      {required String title,
       Color textColor = Colors.black,
-      String value,
-      IconData icon,
-      double width,
-      Color iconColor}) {
+      required String value,
+      IconData? icon,
+      double? width,
+      Color? iconColor}) {
     return Container(
       width: width,
       padding: EdgeInsets.symmetric(horizontal: 28, vertical: 18),
@@ -224,7 +223,9 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
             child: _singleRowButton(
               title: "Bookings",
               textColor:
-                  _rowCurrentBtnIndex == 0 ? Colors.black : Colors.grey[500],
+                  _rowCurrentBtnIndex == 0 
+                  ? Color.fromARGB(255, 0, 0, 0) 
+                  : Color.fromARGB(255, 158, 158, 158),
               borderColor: _rowCurrentBtnIndex == 0
                   ? Colors.deepOrange
                   : Colors.transparent,
@@ -239,7 +240,7 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
             child: _singleRowButton(
               title: "Enquiries",
               textColor:
-                  _rowCurrentBtnIndex == 1 ? Colors.black : Colors.grey[500],
+                  _rowCurrentBtnIndex == 1 ? Color.fromARGB(255, 0, 0, 0) : Color.fromARGB(255, 158, 158, 158),
               borderColor: _rowCurrentBtnIndex == 1
                   ? Colors.deepOrange
                   : Colors.transparent,
@@ -254,7 +255,7 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
             child: _singleRowButton(
               title: "My Service",
               textColor:
-                  _rowCurrentBtnIndex == 2 ? Colors.black : Colors.grey[500],
+                  _rowCurrentBtnIndex == 2 ? Color.fromARGB(255, 0, 0, 0) : Color.fromARGB(255, 158, 158, 158),
               borderColor: _rowCurrentBtnIndex == 2
                   ? Colors.deepOrange
                   : Colors.transparent,
@@ -266,9 +267,9 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
   }
 
   Widget _singleRowButton({
-    String title,
-    Color textColor,
-    Color borderColor,
+    required String title,
+    required Color textColor,
+    required Color borderColor,
   }) {
     return Container(
       height: 40,
@@ -552,24 +553,24 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
                     title: "Booking Reminder",
                     description: "Lorem Ipsum is simply dummy text",
                     icon: Icons.announcement_outlined,
-                    iconColor: Colors.red[600],
-                    boxColor: Colors.red[100]
+                    iconColor: Color.fromARGB(255, 229, 57, 53),
+                    boxColor: Color.fromARGB(255, 255, 205, 210)
                 ),
                 SizedBox(height: 15),
                 _singleButton(
                     title: "New Message",
                     description: "Lorem Ipsum is simply dummy text",
                     icon: Icons.announcement_outlined,
-                    iconColor: Colors.yellow[600],
-                    boxColor: Colors.yellow[100]
+                    iconColor: Color.fromARGB(255, 253, 216, 53),
+                    boxColor: Color.fromARGB(255, 255, 249, 196)
                 ),
                 SizedBox(height: 15,),
                 _singleButton(
                     title: "Upcoming Booking",
                     description: "Lorem Ipsum is simply dummy text",
                     icon: Icons.announcement_outlined,
-                    iconColor: Colors.red[600],
-                    boxColor: Colors.red[100]
+                    iconColor: Color.fromARGB(255, 229, 57, 53),
+                    boxColor: Color.fromARGB(255, 255, 205, 210)
                 ),
               ],
             ),
@@ -579,11 +580,11 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
     );
   }
   _singleButton(
-      {Color boxColor,
-        Color iconColor,
-        IconData icon,
-        String title,
-        String description}) {
+      {Color? boxColor,
+        Color? iconColor,
+        IconData? icon,
+        String? title,
+        String? description}) {
     return Container(
       margin: EdgeInsets.only(right: 8),
       child: Row(
@@ -609,10 +610,10 @@ class _BodyContentTabletWidgetState extends State<BodyContentTabletWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                title!,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
-              Text(description,style: TextStyle(fontSize: 14,color: Colors.grey[400]),)
+              Text(description!,style: TextStyle(fontSize: 14,color: Colors.grey[400]),)
             ],
           )
         ],

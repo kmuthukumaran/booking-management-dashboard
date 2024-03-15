@@ -16,7 +16,7 @@ class DesktopScreen extends StatelessWidget {
               Row(
                 children: [
                   WebVerticalNavWidget(),
-                  BodyContentWidget(sizingInformation: sizingInformation,),
+                  BodyContentWidget(sizingInformation: sizingInformation, key: null,),
 
                 ],
               ),

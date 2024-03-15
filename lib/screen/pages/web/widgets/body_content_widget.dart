@@ -1,12 +1,11 @@
 import 'package:booking_management_dashboard/repository/fake_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class BodyContentWidget extends StatefulWidget {
   final SizingInformation sizingInformation;
 
-  const BodyContentWidget({Key key, this.sizingInformation}) : super(key: key);
+  const BodyContentWidget({Key? key, required this.sizingInformation}) : super(key: key);
 
   @override
   _BodyContentWidgetState createState() => _BodyContentWidgetState();
@@ -172,12 +171,12 @@ class _BodyContentWidgetState extends State<BodyContentWidget> {
   }
 
   Widget _singleItemQuickStats(
-      {String title,
+      {required String title,
       Color textColor = Colors.black,
-      String value,
-      IconData icon,
-      double width,
-      Color iconColor}) {
+      required String value,
+      IconData? icon,
+      double? width,
+      Color? iconColor}) {
     return Container(
       width: width,
       padding: EdgeInsets.symmetric(horizontal: 28, vertical: 18),
@@ -251,7 +250,7 @@ class _BodyContentWidgetState extends State<BodyContentWidget> {
             child: _singleRowButton(
               title: "Bookings",
               textColor:
-                  _rowCurrentBtnIndex == 0 ? Colors.black : Colors.grey[500],
+                  _rowCurrentBtnIndex == 0 ? Color.fromARGB(255, 0, 0, 0) : Color.fromARGB(255, 158, 158, 158),
               borderColor: _rowCurrentBtnIndex == 0
                   ? Colors.deepOrange
                   : Colors.transparent,
@@ -266,7 +265,7 @@ class _BodyContentWidgetState extends State<BodyContentWidget> {
             child: _singleRowButton(
               title: "Enquiries",
               textColor:
-                  _rowCurrentBtnIndex == 1 ? Colors.black : Colors.grey[500],
+                  _rowCurrentBtnIndex == 1 ? Color.fromARGB(255, 0, 0, 0) : Color.fromARGB(255, 158, 158, 158),
               borderColor: _rowCurrentBtnIndex == 1
                   ? Colors.deepOrange
                   : Colors.transparent,
@@ -281,7 +280,7 @@ class _BodyContentWidgetState extends State<BodyContentWidget> {
             child: _singleRowButton(
               title: "My Service",
               textColor:
-                  _rowCurrentBtnIndex == 2 ? Colors.black : Colors.grey[500],
+                  _rowCurrentBtnIndex == 2 ? Color.fromARGB(255, 0, 0, 0) : Color.fromARGB(255, 158, 158, 158),
               borderColor: _rowCurrentBtnIndex == 2
                   ? Colors.deepOrange
                   : Colors.transparent,
@@ -293,9 +292,9 @@ class _BodyContentWidgetState extends State<BodyContentWidget> {
   }
 
   Widget _singleRowButton({
-    String title,
-    Color textColor,
-    Color borderColor,
+    required String title,
+    required Color textColor,
+    required Color borderColor,
   }) {
     return Container(
       height: 40,

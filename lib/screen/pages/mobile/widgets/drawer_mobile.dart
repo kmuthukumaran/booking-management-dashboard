@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMobile extends StatelessWidget {
@@ -72,7 +71,7 @@ class DrawerMobile extends StatelessWidget {
     );
   }
 
-  Widget _singleButton({IconData icon, String title}) {
+  Widget _singleButton({required IconData icon, required String title}) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 8),
       child: Row(
